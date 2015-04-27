@@ -1,8 +1,8 @@
 /// <reference path="../node_modules/phaser/typescript/phaser.comments.d.ts"/>
 
-import Boot = require('./state/Boot');
-import Preload = require('./state/Preload');
-import Main = require('./state/Main');
+import boot = require('./state/Boot');
+import preload = require('./state/Preload');
+import main = require('./state/Main');
 
 //module Wormsjs {
   export class Game extends Phaser.Game {
@@ -14,9 +14,9 @@ import Main = require('./state/Main');
         enableDebug: true
       });
 
-      this.state.add('boot', Boot);
-      this.state.add('preload', Preload);
-      this.state.add('main', Main);
+      this.state.add('boot', boot.Boot);
+      this.state.add('preload', preload.Preload);
+      this.state.add('main', main.Main);
 
       this.state.start('boot');
     }
