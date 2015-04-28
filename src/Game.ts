@@ -1,5 +1,7 @@
 /// <reference path="../node_modules/phaser/typescript/phaser.comments.d.ts"/>
 
+require("script!../node_modules/phaser/dist/phaser.js");
+
 import boot = require('./state/Boot');
 import preload = require('./state/Preload');
 import main = require('./state/Main');
