@@ -19,7 +19,8 @@
         "./src/defs/definitions.d.ts",
         "./src/state/Boot.ts",
         "./src/state/Main.ts",
-        "./src/state/Preload.ts"
+        "./src/state/Preload.ts",
+        "./src/state/States.ts"
     ],
     "compileOnSave": false
 }

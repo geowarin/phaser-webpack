@@ -1,8 +1,6 @@
 /// <reference path="./defs/definitions.d.ts"/>
 
-import {default as Boot} from './state/Boot';
-import {default as Preload} from './state/Preload';
-import {default as Main} from './state/Main';
+import { Boot, Preload, Main } from './state/States';
 
 class Game extends Phaser.Game {
   constructor() {
@@ -24,8 +22,3 @@ class Game extends Phaser.Game {
 window.onload = function() {
   new Game();
 };
-
-var arr = [1, 2, 3];
-for (var prop of arr) {
-  console.log(prop)
-}

@@ -1,0 +1,18 @@
+This project is written in typescript 1.5 with ES6 modules.
+
+It is compiled with webpack.
+
+To compile it, run in the root directory:
+
+----
+webpack
+----
+
+In development use webpack-dev-server
+
+----
+webpack-dev-server
+----
+
+Then go to `http://localhost:8080/webpack-dev-server/` or
+`http://localhost:8080/` if you don't want auto-reload.
