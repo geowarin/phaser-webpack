@@ -1,30 +1,31 @@
-/// <reference path="../node_modules/phaser/typescript/phaser.comments.d.ts"/>
+/// <reference path="./defs/phaser.comments.d.ts"/>
 
-require("script!../node_modules/phaser/dist/phaser.js");
+import {default as Boot} from './state/Boot';
+import {default as Preload} from './state/Preload';
+import {default as Main} from './state/Main';
 
-import boot = require('./state/Boot');
-import preload = require('./state/Preload');
-import main = require('./state/Main');
+class Game extends Phaser.Game {
+  constructor() {
+    super({
+      width: 800,
+      height: 600,
+      transparent: false,
+      enableDebug: true
+    });
 
-//module Wormsjs {
-  export class Game extends Phaser.Game {
-    constructor() {
-      super({
-        width: 800,
-        height: 600,
-        transparent: false,
-        enableDebug: true
-      });
+    this.state.add('boot', Boot);
+    this.state.add('preload', Preload);
+    this.state.add('main', Main);
 
-      this.state.add('boot', boot.Boot);
-      this.state.add('preload', preload.Preload);
-      this.state.add('main', main.Main);
-
-      this.state.start('boot');
-    }
+    this.state.start('boot');
   }
-//}
+}
 
 window.onload = function() {
   new Game();
 };
+
+var arr = [1, 2, 3];
+for (var prop of arr) {
+  console.log(prop)
+}

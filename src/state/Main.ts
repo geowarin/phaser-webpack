@@ -1,4 +1,4 @@
-export class Main extends Phaser.State {
+export default class Main extends Phaser.State {
 
   create() {
     var thing:String = 'code !';

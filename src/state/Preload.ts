@@ -1,4 +1,4 @@
-export class Preload extends Phaser.State {
+export default class Preload extends Phaser.State {
   private preloadBar:Phaser.Sprite;
 
   preload() {
