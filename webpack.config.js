@@ -1,4 +1,5 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
 
 module.exports = {
 
@@ -6,11 +7,15 @@ module.exports = {
     extensions: ['', '.webpack.js', '.web.js', '.ts', '.js']
   },
 
-  entry: './src/Game.ts',
+  entry: {
+    app: "./src/Game.ts",
+    vendor: ["./src/vendors.js"],
+  },
 
-  plugins: [new HtmlWebpackPlugin({
-    title: 'My Game'
-  })],
+  plugins: [
+    new HtmlWebpackPlugin({ title: 'My Game' }),
+    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+  ],
 
   output: {
     path: 'build',

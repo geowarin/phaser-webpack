@@ -1,4 +1,4 @@
-/// <reference path="./defs/phaser.comments.d.ts"/>
+/// <reference path="./defs/definitions.d.ts"/>
 
 import {default as Boot} from './state/Boot';
 import {default as Preload} from './state/Preload';
