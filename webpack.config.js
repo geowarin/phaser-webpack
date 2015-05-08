@@ -10,7 +10,7 @@ module.exports = {
 
   entry: {
     app: './app/src/Game.ts',
-    includes: './app/src/includes.js',
+    includes: './app/includes.js',
   },
 
   plugins: [
