@@ -1,5 +1,6 @@
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
 
@@ -8,13 +9,14 @@ module.exports = {
   },
 
   entry: {
-    app: "./app/src/Game.ts",
-    vendor: ["./app/src/vendors.js"],
+    app: './app/src/Game.ts',
+    includes: './app/src/includes.js',
   },
 
   plugins: [
     new HtmlWebpackPlugin({ title: 'My Game' }),
-    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.bundle.js")
+    new webpack.optimize.CommonsChunkPlugin('includes', 'includes.bundle.js'),
+    new ExtractTextPlugin('styles.css')
   ],
 
   output: {
@@ -24,12 +26,10 @@ module.exports = {
 
   devtool: 'source-map',
 
-  // Add loader for .ts files.
   module: {
     loaders: [
-      {
-        test: /\.ts$/, loader: 'awesome-typescript-loader?library=es6'
-      }
+      { test: /\.ts$/, loader: 'awesome-typescript-loader?library=es6' },
+      { test: /\.css$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader') }
     ]
   }
 };
