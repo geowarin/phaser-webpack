@@ -8,8 +8,8 @@ module.exports = {
   },
 
   entry: {
-    app: "./src/Game.ts",
-    vendor: ["./src/vendors.js"],
+    app: "./app/src/Game.ts",
+    vendor: ["./app/src/vendors.js"],
   },
 
   plugins: [
@@ -18,11 +18,10 @@ module.exports = {
   ],
 
   output: {
-    path: 'build',
+    path: 'dist',
     filename: 'bundle.js'
   },
 
-  // Source maps support (or 'inline-source-map' also works)
   devtool: 'source-map',
 
   // Add loader for .ts files.

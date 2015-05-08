@@ -15,12 +15,12 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
-        "./src/Game.ts",
-        "./src/defs/definitions.d.ts",
-        "./src/state/Boot.ts",
-        "./src/state/Main.ts",
-        "./src/state/Preload.ts",
-        "./src/state/States.ts"
+        "./app/src/Game.ts",
+        "./app/src/defs/definitions.d.ts",
+        "./app/src/state/Boot.ts",
+        "./app/src/state/Main.ts",
+        "./app/src/state/Preload.ts",
+        "./app/src/state/States.ts"
     ],
     "compileOnSave": false
 }
